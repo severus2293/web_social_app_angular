@@ -1,0 +1,14 @@
+<body>
+<div id="container">
+  <h2>Авторизация</h2>
+  <form [formGroup]="form" autocomplete="off" (ngSubmit)="submit()">
+    <label>
+      имя:<input  id = "namefold" placeholder="Имя пользователя" formControlName="name"><br>
+    </label>
+    <input type="submit" id = "typename"  value="Войти" >
+    <p *ngIf="checkname()" [ngStyle]="{'color': '#AA0000', 'font-size': '16px'}">Такой пользователь не зарегестрирован</p>
+  </form>
+
+  <p><a routerLink="/reg">Регистрация</a></p>
+</div>
+</body>

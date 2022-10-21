@@ -1,0 +1,46 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  min-width: 1400px;
+  min-height: 1300px;
+  background-image: url("back_user.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body h2 {
+  color: white;
+}
+body label {
+  font-size: 20px;
+  font-weight: bolder;
+}
+body #typename {
+  margin-top: 10%;
+  width: 100%;
+  background-color: #190061;
+  color: white;
+  cursor: pointer;
+}
+body a {
+  color: #77ff11;
+  font-size: 20px;
+}
+body #container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14%;
+}
+
+/*# sourceMappingURL=app.component.css.map */

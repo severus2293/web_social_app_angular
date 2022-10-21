@@ -1,0 +1,17 @@
+<body>
+<form class = "exit" [routerLink]="'/user/' +user.id">
+  <button class="back"><img src= "assets/backpic.png"> Назад </button>
+
+</form>
+<div class="box">
+<h2 class="title">Список новостей</h2>
+<dl>
+  <ng-template ngFor let-friend_id [ngForOf]="friends">
+    <ng-template ngFor let-message [ngForOf]="users[friend_id].messages">
+      <dt> {{users[friend_id].name}}, {{message.date}}</dt>
+      <dd> {{message.mes}}</dd>
+    </ng-template>
+  </ng-template>
+</dl>
+</div>
+</body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Brokers</title>
+</head>
+<body>
+<div class = "brokers">
+  <div *ngFor="let broker of brokers">
+    <div class  = "broker_card" id = "{{broker.ID}}">
+      <p>Имя брокера: {{broker.name}}</p>
+      <p>Запас денежных средств: <input type="number"  min="0" [(ngModel)]="broker.money"></p>
+      <button  (click)="edit()" >изменить</button>
+      <button  (click)="delete(broker.ID)" >удалить</button>
+      <p> ______________________________________________</p>
+    </div>
+  </div>
+  <p>Имя брокера: <input required [(ngModel)]="name"></p>
+  <p>Запас денежных средств: <input type="number" min="0" required [(ngModel)]="money"></p>
+  <button  (click)="add()">Добавить брокера</button>
+  <p> ______________________________________________</p>
+</div>
+</body>
+</html>

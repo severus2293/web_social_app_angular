@@ -1,0 +1,31 @@
+<body>
+<form routerLink="">
+  <button class ="back"><img src= "assets/backpic.png"> Выход</button>
+</form>
+<div class="origbox">
+  <div class = "publishbox">
+    <h3>Опубликовать новость</h3>
+    <form class="publish" [formGroup]="newsform" id="pubform" (ngSubmit)="publish_news()">
+<textarea id="area" name="text" formControlName="text">
+</textarea>
+      <button id="pub">  Опубликовать</button>
+    </form>
+  </div>
+  <div class="newsbox">
+    <h3>Мои новости</h3>
+    <textarea id = "mynws" readonly [value]="newsstory">
+
+</textarea>
+  </div>
+  <div class="databox">
+    <img src= '{{user.img}}'>
+    <h3>{{user.name}}</h3>
+    <form (ngSubmit)="show_friends()">
+      <button class ="next" type="submit"><img src= "assets/friendpic.png">Список друзей</button>
+    </form>
+    <form (ngSubmit)="show_news()">
+      <button class="next news"><img src= "assets/newspic.png"> Список новостей </button>
+    </form>
+  </div>
+</div>
+</body>

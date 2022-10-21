@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Акции</title>
+</head>
+<body>
+<div class = "stocks">
+  <div *ngFor="let stock of stocks">
+    <div class  = "stock_card" id = "{{stock.id}}">
+      <p>Закон распределения: <input [(ngModel)]="stock.distribution"></p>
+      <p>Максимальное значение изменения: <input type="number" min="0" [(ngModel)]="stock.max"></p>
+      <p>Общее количество доступных акций: <input type="number" min="0" [(ngModel)]="stock.count"></p>
+      <p>Начальная стоимость одной акции: <input type="number" min="0" [(ngModel)]="stock.price"></p>
+      <button  (click)="edit()" >изменить</button>
+      <button  (click)="delete(stock.id)" >удалить</button>
+      <p> ______________________________________________</p>
+    </div>
+  </div>
+  <p>Закон распределения: <input [(ngModel)]="distribution"></p>
+  <p>Максимальное значение изменения: <input type="number" min="0" [(ngModel)]="max"></p>
+  <p>Общее количество доступных акций: <input type="number" min="0" [(ngModel)]="count"></p>
+  <p>Начальная стоимость одной акции: <input type="number" min="0" [(ngModel)]="price"></p>
+  <button  (click)="add()">добавить новую акцию</button>
+</div>
+</body>
+</html>

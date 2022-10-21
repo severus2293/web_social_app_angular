@@ -1,0 +1,33 @@
+
+<body>
+<form routerLink="">
+  <button class ="back"><img src= "assets/backpic.png" > Назад</button>
+</form>
+<div id="containerregist">
+  <h2>Регистрация</h2>
+  <form autocomplete="off">
+    <div class="field">
+      <label>
+        имя:<input  id = "namefold" placeholder="Имя пользователя"><br>
+      </label>
+    </div>
+    <div class="field" id="datediv">
+      <label id="datelab">
+        Дата рождения:<input type="date"  id = "datefold" placeholder="Дата рождения"><br>
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        почта:<input type="email"  id = "mailfold" placeholder="Почта" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i"><br>
+      </label>
+    </div>
+    <div class="field" id="photodiv">
+      <label id="photolab">
+        фото: <input type="file" id="photofold" multiple accept="image/*,image/jpeg" >
+      </label>
+    </div>
+    <input type="submit" id = "typeregist"  value="Зарегистрироваться">
+  </form>
+</div>
+</body>
+

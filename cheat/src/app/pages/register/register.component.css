@@ -1,0 +1,84 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  min-width: 1400px;
+  min-height: 1300px;
+  background-image: url("back_user.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body button.back {
+  position: relative;
+  left: 90%;
+  background: transparent;
+  border: transparent;
+  color: #379683;
+  font-weight: bolder;
+  font-size: 20px;
+  cursor: pointer;
+}
+body button.back img {
+  float: left;
+  height: 10%;
+}
+body div.field {
+  clear: both;
+  text-align: right;
+}
+body h2 {
+  color: white;
+}
+body label {
+  font-size: 20px;
+  font-weight: bolder;
+}
+body #datediv {
+  width: 110%;
+  margin-left: -3%;
+}
+body #datediv #datelab {
+  margin-right: 55%;
+}
+body #datefold {
+  width: 49%;
+}
+body #photodiv {
+  width: 110%;
+}
+body #photolab {
+  margin-right: -10%;
+}
+body #photofold {
+  width: 70%;
+}
+body form {
+  margin-left: -6%;
+}
+body #typeregist {
+  margin-top: 7%;
+  margin-left: 10%;
+  width: 100%;
+  background-color: #190061;
+  color: white;
+  cursor: pointer;
+}
+
+#containerregist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14%;
+}
+
+/*# sourceMappingURL=register.component.css.map */

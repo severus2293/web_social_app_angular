@@ -1,0 +1,22 @@
+<body>
+h2.title Список друзей
+form.exit(action="./")
+button.back Назад
+img(src= "/image_files/backpic.png")
+div.scroll-table
+table(border= 1)
+thead
+tr.title_row
+th Фото
+th Имя
+div.scroll-table-body
+table(border=1)
+tbody
+if friends
+for friend_id in friends
+tr(id= friend_id)
+th
+img(src= users[friend_id].img)
+th
+a(href="/user/" + friend_id) #{users[friend_id].name}
+</body>

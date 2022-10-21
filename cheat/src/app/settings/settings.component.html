@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Настройки</title>
+</head>
+<body>
+<div class = "settings">
+  <p>Время начала торгов: <input type="time"  required [(ngModel)]="settings.tm_begin"></p>
+  <p>Время окончания торгов: <input type="time" required [(ngModel)]="settings.tmstop"></p>
+  <p>Интервал обновления акций: <input type="time" required [(ngModel)]="settings.tmout"></p>
+  <button  (click)="edit()" >Изменить</button>
+  <p> _____________________________________________________</p>
+</div>
+</body>
+</html>
