@@ -1,0 +1,39 @@
+<body>
+<form [routerLink]="'/user/' +user.id">
+  <button class ="back"><img src= "assets/backpic.png"> Вернуться</button>
+</form>
+<h2 class="title"> Список пользователей</h2>
+<div class="scroll-table">
+<table border='1'>
+<thead>
+<tr class="title_row">
+<th>Фото</th>
+  <th>Имя</th>
+  <th>Дата рождения</th>
+  <th>Почта</th>
+  <th class="role">Роль</th>
+  <th class="state">Статус</th>
+</thead>
+<tbody>
+<tr *ngFor="let usertm of users" [id]="usertm.id">
+<th><img [src]= usertm.img></th>
+
+<th>{{usertm.name}}</th>
+<th><input type="date" [value]= "usertm.birthday" class="date" [id]= "'date:' + usertm.id" (change)="chng_date($event)"></th>
+
+<th><input class="mail" type="email" [id]="'mail:' + usertm.id" [value]= "usertm.mail" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" (change)="chng_mail($event)">  </th>
+
+  <th class="role"><select class="sel role" name="role" [id] = "'role:' + usertm.id" (change)="chng_role($event)">
+      <option class="ad" [selected]="usertm.role === 'admin' ? 'selected' : '' " value="admin"> Администратор</option>
+      <option class="us" [selected]="usertm.role === 'user' ? 'selected' : '' " value="user">Пользователь</option>
+  </select>
+  </th>
+<th class="state" [id]="'thstate:' + usertm.id"><select class="sel stat" name="status" [id]="'status:' + usertm.id" (change)="chng_status($event)">
+  <option value="active" [selected]="usertm.status === 'active' ? 'selected' : ''">Активный</option>
+  <option value="unconfirmed" [selected]="usertm.status === 'unconfirmed' ? 'selected' : ''"> Не подтверждённый</option>
+  <option value="locked" [selected]="usertm.status === 'locked' ? 'selected' : ''"> Заблокированный</option>
+</select></th>
+</tbody>
+</table>
+</div>
+</body>

@@ -1,0 +1,37 @@
+
+<body>
+<form routerLink="">
+  <button class ="back"><img src= "assets/backpic.png" > Назад</button>
+</form>
+<div id="containerregist">
+  <h2>Регистрация</h2>
+  <form autocomplete="off" [formGroup]="registform" (ngSubmit)="checkcorrectdata()">
+    <div class="field">
+      <label>
+        имя:<input  id = "namefold" placeholder="Имя пользователя" formControlName="name"><br>
+        <p *ngIf="checkname()" [ngStyle]="{'color': '#AA0000', 'font-size': '18px'}">Такой пользователь уже существует!</p>
+      </label>
+    </div>
+    <div class="field">
+      <label id="datelab">
+        Дата рождения:<input type="date"  id = "datefold" placeholder="Дата рождения" formControlName="date"><br>
+        <p *ngIf="checkdate()" [ngStyle]="{'color': '#AA0000', 'font-size': '18px'}">Заполните дату!</p>
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        почта:<input type="email"  id = "mailfold" placeholder="Почта" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i" formControlName="mail"><br>
+        <p *ngIf="checkmail()" [ngStyle]="{'color': '#AA0000', 'font-size': '18px'}">Некорректный адрес почты!</p>
+      </label>
+    </div>
+    <div class="field" id="photodiv">
+      <label id="photolab">
+        фото: <input type="file" id="photofold" multiple accept="image/*,image/jpeg" formControlName="photo">
+        <p *ngIf="checkphoto()" [ngStyle]="{'color': '#AA0000', 'font-size': '18px'}">Выберите фото!</p>
+      </label>
+    </div>
+    <input type="submit" id = "typeregist"  value="Зарегистрироваться">
+  </form>
+</div>
+</body>
+

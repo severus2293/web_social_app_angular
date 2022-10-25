@@ -1,0 +1,40 @@
+<body>
+<form routerLink="">
+  <button class ="back"><img src= "assets/backpic.png"> Выход</button>
+</form>
+<label for="file-upload" class="custom-file-upload">
+  Сменить изображение
+</label>
+<input id="file-upload" type="file" (change) ="new_image($event);">
+<div class="origbox">
+  <div class = "publishbox">
+    <h3>Опубликовать новость</h3>
+    <form class="publish" [formGroup]="newsform" id="pubform" (ngSubmit)="publish_news()">
+<textarea id="area" name="text" formControlName="text">
+</textarea>
+      <button id="pub">  Опубликовать</button>
+    </form>
+  </div>
+  <div class="newsbox">
+    <h3>Мои новости</h3>
+    <textarea id = "mynws" readonly [value]="newsstory">
+
+</textarea>
+  </div>
+  <div class="databox">
+      <img [src]= user.img>
+    <h3> имя: {{user.name}}</h3>
+    <h3> почта: {{user.mail}} </h3>
+    <h3> дата рождения: {{user.birthday}}</h3>
+    <form (ngSubmit)="show_friends()">
+      <button class ="next" type="submit"><img src= "assets/friendpic.png">Список друзей</button>
+    </form>
+    <form (ngSubmit)="show_news()">
+      <button class="next news"><img src= "assets/newspic.png"> Список новостей </button>
+    </form>
+    <form (ngSubmit)="show_admin()" *ngIf="user.role ==='admin'">
+      <button class ="next admin" type="submit"><img src= "assets/adminpic.png">Администрирование</button>
+    </form>
+  </div>
+</div>
+</body>

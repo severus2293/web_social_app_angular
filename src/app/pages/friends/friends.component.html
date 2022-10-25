@@ -1,0 +1,44 @@
+<body>
+<h2 class="title">Список друзей</h2>
+<form class="exit" [routerLink]="'/user/' + user.id">
+<button class="back"> <img src= "assets/backpic.png"> Назад
+</button>
+</form>
+<input class="add" type="image" src="assets/orange_add.png" (click)="show_dialog()">
+<div class="newfriends" *ngIf="flag">
+  <form (ngSubmit)="add_friends()" [formGroup]="friendsform">
+  <ng-template ngFor let-notfriend [ngForOf]="get_not_friends()">
+    <p> <input type="checkbox" (change)="onChange(notfriend, $event.target.checked)">{{users[notfriend].name}}</p>
+  </ng-template>
+  <button type="submit">Добавить друзей</button>
+  </form>
+</div>
+<div class="scroll-table">
+<table border="1">
+<thead>
+<tr class="title-row">
+<th>Фото</th>
+<th>Имя</th>
+  <th></th>
+</tr>
+</thead>
+</table>
+<div class = "scroll-table-body">
+<table border='1'>
+<tbody>
+<tr *ngFor="let friend_id of user.friends">
+<th>
+<img [src]= 'users[friend_id].img'>
+</th>
+<th>
+ {{users[friend_id].name}}
+</th>
+
+  <th><form (ngSubmit)="del_friend($event)" [id] = "friend_id"><input class="_del" type="image" src="assets/orange_delete.png" (click)="shure()"></form></th>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
